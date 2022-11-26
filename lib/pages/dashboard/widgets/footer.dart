@@ -14,12 +14,15 @@ class Footer extends StatelessWidget {
           onTap: press,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text('Built with ❤ by '),
-              Text('tgsatt',
-                  style: TextStyle(
-                    color: ColorConfig.primaryColor,
-                  )),
+            children: [
+              const Text('Built with ❤ by '),
+              InkWell(
+                onTap: () {},
+                child: const Text('tgsatt',
+                    style: TextStyle(
+                      color: ColorConfig.primaryColor,
+                    )),
+              ),
             ],
           ),
         )

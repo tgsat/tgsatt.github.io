@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_me/pages/dashboard/about/more_about.dart';
-import 'package:portfolio_me/pages/dashboard/contact/contact.dart';
+import 'package:portfolio_me/pages/dashboard/jobs/jobs.dart';
+import 'package:portfolio_me/pages/dashboard/project/project.dart';
 import 'package:portfolio_me/pages/dashboard/skill/skill.dart';
 import 'package:portfolio_me/pages/dashboard/widgets/action_homepage.dart';
 import 'package:portfolio_me/pages/dashboard/widgets/drawer.dart';
 import 'package:portfolio_me/pages/dashboard/widgets/footer.dart';
 import 'package:portfolio_me/pages/dashboard/about/about.dart';
+import 'package:portfolio_me/pages/dashboard/widgets/social_icon.dart';
 import 'package:portfolio_me/utils/value/color_config.dart';
 import 'package:portfolio_me/utils/value/image_config.dart';
 import 'package:portfolio_me/utils/value/size_config.dart';
@@ -37,8 +38,11 @@ class _DashboardPageState extends State<DashboardPage> {
               ? Padding(
                   padding: const EdgeInsets.only(right: 10),
                   child: InkWell(
-                    child: const Icon(Icons.menu,
-                        color: ColorConfig.primaryColor, size: 30),
+                    child: const Tooltip(
+                      message: "Menu",
+                      child: Icon(Icons.menu,
+                          color: ColorConfig.primaryColor, size: 30),
+                    ),
                     onTap: () {
                       _scaffoldKey.currentState!.openEndDrawer();
                     },
@@ -58,20 +62,18 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Column(
                 children: const [
                   About(),
-                  MoreAbout(),
-                  SizedBox(height: 50),
                   Skill(),
                   SizedBox(height: 50),
-                  // RecentProjects(),
+                  JobHistory(),
                   SizedBox(height: 50),
-                  Contact(),
+                  RecentProjects(),
                   SizedBox(height: 50),
                   Footer(),
                   SizedBox(height: 20),
                 ],
               ),
             ),
-            // SocialItem.iconBar(context),
+            const Social(),
           ],
         ),
       ),

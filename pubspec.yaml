@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^1.0.3
   flutter_spinkit: ^5.1.0
   touchable_opacity: ^1.2.0
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_test:

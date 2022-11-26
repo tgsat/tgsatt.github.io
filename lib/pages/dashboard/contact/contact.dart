@@ -59,7 +59,7 @@ class Contact extends StatelessWidget {
                 vertical: 30,
                 horizontal: SizeConfig.isMobile(context)
                     ? SizeConfig.maxWidth(context) / 6
-                    : SizeConfig.maxWidth(context) / 5),
+                    : SizeConfig.maxWidth(context) / 2),
             child: Wrap(
               children: [
                 ContactWidget.content(

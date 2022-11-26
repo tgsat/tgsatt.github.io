@@ -1,13 +1,13 @@
-class ProjectModel {
+class JobModel {
   final String? title;
-  final String? section;
+  final String? address;
   final String? description;
   final String? action;
   final String? date;
 
-  ProjectModel({
+  JobModel({
     this.title,
-    this.section,
+    this.address,
     this.description,
     this.action,
     this.date,

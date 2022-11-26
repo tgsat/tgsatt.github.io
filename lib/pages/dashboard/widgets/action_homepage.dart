@@ -29,7 +29,7 @@ class ActionHomePage extends StatelessWidget {
         child: TextButton(
             onPressed: () {
               if (isMobile) Navigator.pop(context);
-              sc.animateTo(200,
+              sc.animateTo(50,
                   duration: Duration(milliseconds: scrollDur),
                   curve: Curves.easeIn);
             },
@@ -48,7 +48,7 @@ class ActionHomePage extends StatelessWidget {
             onPressed: () {
               if (isMobile) Navigator.pop(context);
               sc.animateTo(
-                isMobile ? 1100 : 800,
+                500,
                 duration: Duration(milliseconds: scrollDur),
                 curve: Curves.easeIn,
               );
@@ -68,12 +68,12 @@ class ActionHomePage extends StatelessWidget {
             onPressed: () {
               if (isMobile) Navigator.pop(context);
               sc.animateTo(
-                1400,
+                isMobile ? 900 : 1000,
                 duration: Duration(milliseconds: scrollDur),
                 curve: Curves.easeIn,
               );
             },
-            child: Text(Dictionary.project,
+            child: Text(Dictionary.work,
                 style: const Fonts(
                         color: ColorConfig.primaryColor,
                         fontWeight: FontWeight.w400,
@@ -88,19 +88,19 @@ class ActionHomePage extends StatelessWidget {
             onPressed: () {
               if (isMobile) Navigator.pop(context);
               sc.animateTo(
-                isMobile ? 2600 : 1900,
+                1550,
                 duration: Duration(milliseconds: scrollDur),
                 curve: Curves.easeIn,
               );
             },
-            child: Text(Dictionary.contact,
+            child: Text(Dictionary.project,
                 style: const Fonts(
                         color: ColorConfig.primaryColor,
                         fontWeight: FontWeight.w400,
                         size: SizeConfig.textMedium,
                         height: 1)
                     .titleOswald)),
-      )
+      ),
     ];
   }
 }
