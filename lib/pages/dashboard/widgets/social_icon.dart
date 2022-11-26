@@ -1,8 +1,9 @@
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
 import 'package:portfolio_me/utils/value/image_config.dart';
 import 'package:portfolio_me/utils/value/size_config.dart';
 import 'package:portfolio_me/utils/value/url.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Social extends StatelessWidget {
   const Social({Key? key}) : super(key: key);
@@ -20,36 +21,17 @@ class Social extends StatelessWidget {
             Tooltip(
               message: "Whatapps",
               child: SocialItem.icon(
-                press: () async {
-                  if (!await launch(Url.whatapps)) throw 'Could not launch';
+                press: () {
+                  js.context.callMethod('open', [Url.whatapps]);
                 },
                 imgURL: 'https://cdn-icons-png.flaticon.com/512/733/733585.png',
-              ),
-            ),
-            Tooltip(
-              message: "Mail",
-              child: SocialItem.icon(
-                press: () async {
-                  if (!await launch(Url.mail)) throw 'Could not launch';
-                },
-                imgURL:
-                    'https://cdn-icons-png.flaticon.com/512/6806/6806987.png',
-              ),
-            ),
-            Tooltip(
-              message: "Github",
-              child: SocialItem.icon(
-                press: () async {
-                  if (!await launch(Url.github)) throw 'Could not launch';
-                },
-                imgURL: 'https://cdn-icons-png.flaticon.com/512/733/733609.png',
               ),
             ),
             Tooltip(
               message: "Instagram",
               child: SocialItem.icon(
                 press: () async {
-                  if (!await launch(Url.instagram)) throw 'Could not launch';
+                  js.context.callMethod('open', [Url.instagram]);
                 },
                 imgURL:
                     'https://cdn-icons-png.flaticon.com/512/3955/3955024.png',
@@ -59,9 +41,18 @@ class Social extends StatelessWidget {
               message: "Linkedin",
               child: SocialItem.icon(
                 press: () async {
-                  if (!await launch(Url.linkedin)) throw 'Could not launch';
+                  js.context.callMethod('open', [Url.linkedin]);
                 },
                 imgURL: 'https://cdn-icons-png.flaticon.com/512/145/145807.png',
+              ),
+            ),
+            Tooltip(
+              message: "Github",
+              child: SocialItem.icon(
+                press: () async {
+                  js.context.callMethod('open', [Url.github]);
+                },
+                imgURL: 'https://cdn-icons-png.flaticon.com/512/733/733609.png',
               ),
             ),
           ],

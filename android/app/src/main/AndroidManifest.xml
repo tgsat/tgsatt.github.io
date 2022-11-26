@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.portfolio_me">
    <application
-        android:label="portfolio_me"
-        android:name="${applicationName}"
+        android:label="Hi!,I Am tgsatt"
+        android:name="Hi!,I Am tgsatt"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

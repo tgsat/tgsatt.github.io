@@ -1,3 +1,5 @@
+import 'dart:js' as js;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,6 +7,7 @@ import 'package:portfolio_me/utils/value/color_config.dart';
 import 'package:portfolio_me/utils/value/dictionary.dart';
 import 'package:portfolio_me/utils/value/fonts.dart';
 import 'package:portfolio_me/utils/value/size_config.dart';
+import 'package:portfolio_me/utils/value/url.dart';
 import 'package:portfolio_me/utils/widgets/buttons/button_general.dart';
 
 class About extends StatelessWidget {
@@ -83,9 +86,13 @@ class About extends StatelessWidget {
                               horizontal: 8, vertical: 14),
                           child: ButtonGeneral.rowFixed(
                             titleFirst: Dictionary.resume,
-                            pressFirst: () {},
+                            pressFirst: () {
+                              js.context.callMethod('open', [Url.resume]);
+                            },
                             titleSecond: Dictionary.hireMe,
-                            pressSecond: () {},
+                            pressSecond: () {
+                              js.context.callMethod('open', [Url.hireMe]);
+                            },
                           )),
                     ],
                   ),
